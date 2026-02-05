@@ -1,0 +1,31 @@
+package 1
+
+" DIGHA DIARIES"
+3 days 2 nights
+
+a complete trip to digha, shankarpur, nmandarmani, talsari, and Mohana
+
+cost: 2500/- per person
+
+
+package 2
+
+"KERALA: A TRIP TO GOD'S OWN COUNTRY"
+
+7 days 6 nights
+
+a complete kerala tour consistas of Munnar ,thekeddy, aleppy. kovalam, varkala, 
+
+cost: 35000/- per person
+
+
+package 3
+
+"SIKKIM SAGA"
+
+5 days 4 nights
+
+trip to Gangtok, lachung, lachen, Namche, nathula, rongpo
+
+cost 20000/-
+

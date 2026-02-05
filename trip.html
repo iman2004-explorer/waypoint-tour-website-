@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Packages | Waypoint Tours</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trip.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">WAYPOINT</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="trip.html" style="color: #ffcc00;">Packages</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="package-page">
+        <h2 class="page-title">Exclusive Tour Packages</h2>
+        
+        <div class="package-grid">
+            <div class="pkg-card">
+                <div class="price-tag">₹2,500</div>
+                <img src="pk1.jpg" alt="Digha Diaries">
+                <div class="pkg-details">
+                    <h3>DIGHA DIARIES</h3>
+                    <p>3 Days | 2 Nights</p>
+                    <button class="btn-open" onclick="showModal('pkg1')">View Itinerary</button>
+                </div>
+            </div>
+
+            <div class="pkg-card">
+                <div class="price-tag">₹35,000</div>
+                <img src="pk2.jpg" alt="Kerala">
+                <div class="pkg-details">
+                    <h3>KERALA TRIP</h3>
+                    <p>7 Days | 6 Nights</p>
+                    <button class="btn-open" onclick="showModal('pkg2')">View Itinerary</button>
+                </div>
+            </div>
+
+            <div class="pkg-card">
+                <div class="price-tag">₹20,000</div>
+                <img src="pk3.jpg" alt="Sikkim Saga">
+                <div class="pkg-details">
+                    <h3>SIKKIM SAGA</h3>
+                    <p>5 Days | 4 Nights</p>
+                    <button class="btn-open" onclick="showModal('pkg3')">View Itinerary</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="itineraryModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-x" onclick="closeModal()">&times;</span>
+            <div id="itineraryContent">
+                </div>
+            
+            <div class="inquiry-section">
+                <h4>Customize this Itinerary</h4>
+                <form id="pkgInquiryForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <textarea placeholder="Tell us if you need any changes to this specific trip..." rows="4" required></textarea>
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const trips = {
+            pkg1: {
+                name: "DIGHA DIARIES",
+                time: "3 days 2 nights",
+                info: "A complete trip to Digha, Shankarpur, Mandarmani, Talsari, and Mohana.",
+                cost: "₹2,500/- per person"
+            },
+            pkg2: {
+                name: "KERALA: GOD'S OWN COUNTRY",
+                time: "7 days 6 nights",
+                info: "A complete Kerala tour consisting of Munnar, Thekkady, Alleppey, Kovalam, and Varkala.",
+                cost: "₹35,000/- per person"
+            },
+            pkg3: {
+                name: "SIKKIM SAGA",
+                time: "5 days 4 nights",
+                info: "Trip to Gangtok, Lachung, Lachen, Namchi, Nathula, and Rongpo.",
+                cost: "₹20,000/- per person"
+            }
+        };
+
+        function showModal(id) {
+            const modal = document.getElementById('itineraryModal');
+            const content = document.getElementById('itineraryContent');
+            const trip = trips[id];
+
+            content.innerHTML = `
+                <h2 style="color: #008080;">${trip.name}</h2>
+                <p style="font-weight:bold; color:#ff7f50;">Duration: ${trip.time}</p>
+                <p style="margin: 15px 0;">${trip.info}</p>
+                <h3 style="color: #333;">Cost: ${trip.cost}</h3>
+            `;
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('itineraryModal').style.display = "none";
+        }
+
+        window.onclick = function(e) {
+            if (e.target.className === 'modal-overlay') closeModal();
+        }
+    </script>
+</body>
+</html>

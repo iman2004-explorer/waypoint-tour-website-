@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Waypoint Tours</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">WAYPOINT</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="trip.html">Packages</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="contact.html" style="color: #ffcc00;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="contact-wrapper">
+        <div class="contact-container">
+            <h2 class="title">Get in Touch 🌍</h2>
+            <p class="subtitle">The Waypoint family is here to answer your questions.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="emoji-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>8768553999</p>
+                    <p>8670074806</p>
+                    <a href="tel:8768553999" class="action-link">Call Now</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="emoji-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>imanchatterjee8@gmail.com</p>
+                    <a href="mailto:imanchatterjee8@gmail.com" class="action-link">Send Mail</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="emoji-icon">📸</div>
+                    <h3>Instagram</h3>
+                    <p>@curious_cloud_14</p>
+                    <p>@esh_chatterjee</p>
+                    <a href="https://instagram.com/curious_cloud_14" target="_blank" class="action-link">Follow Us</a>
+                </div>
+            </div>
+
+            <div class="message-box">
+                <h3>Quick Message ✍️</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <textarea placeholder="How can we help you plan your trip?" rows="4" required></textarea>
+                    <button type="submit" class="submit-btn">Send to Waypoint Family</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert("Message sent! The Waypoint Family will get back to you shortly.");
+            this.reset();
+        }
+    </script>
+
+</body>
+</html>

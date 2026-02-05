@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Reviews | Waypoint Tours</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">WAYPOINT</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="trip.html">Packages</a></li>
+            <li><a href="review.html" style="color: #ffcc00;">Reviews</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="review-page">
+        <div class="review-container">
+            <h2 class="title">What Our Family Says</h2>
+            <p class="subtitle">Real stories from real travelers who explored with Waypoint Tours.</p>
+
+            <div class="reviews-display" id="reviewsList">
+                <div class="review-card">
+                    <p class="user-text">"The Sikkim trip was life-changing. Everything from the stays in Lachung to the Nathula pass visit was handled so professionally. Truly affordable!"</p>
+                    <h4 class="user-name">- Rahul Sharma</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="review-card">
+                    <p class="user-text">"Digha Diaries was a short but sweet escape. The Waypoint family makes you feel right at home. Highly recommended for weekend trips."</p>
+                    <h4 class="user-name">- Sneha Kapoor</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+
+            <div class="add-review-box">
+                <h3>Share Your Experience</h3>
+                <form id="reviewForm">
+                    <input type="text" id="userName" placeholder="Your Name" required>
+                    <textarea id="userReview" placeholder="Write your travel story here..." rows="4" required></textarea>
+                    <div class="rating-input">
+                        <span>Rating: </span>
+                        <select id="userRating">
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-review-btn">Post Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const reviewForm = document.getElementById('reviewForm');
+        const reviewsList = document.getElementById('reviewsList');
+
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value;
+            const text = document.getElementById('userReview').value;
+            const rating = document.getElementById('userRating').value;
+            const stars = "⭐".repeat(rating);
+
+            // Create a new review card
+            const newReview = document.createElement('div');
+            newReview.className = 'review-card new-entry';
+            newReview.innerHTML = `
+                <p class="user-text">"${text}"</p>
+                <h4 class="user-name">- ${name}</h4>
+                <div class="stars">${stars}</div>
+            `;
+
+            // Add to the top of the list
+            reviewsList.prepend(newReview);
+
+            // Reset form
+            reviewForm.reset();
+            alert("Thank you for your feedback! Your review has been posted.");
+        });
+    </script>
+</body>
+</html>
